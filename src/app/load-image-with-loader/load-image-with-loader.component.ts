@@ -8,11 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LoadImageWithLoaderComponent implements OnInit {
 
 
-  @Input() image:string;
-  @Input() height:number;
-  @Input() width:number;
+  @Input() image: string;
+  @Input() height: number;
+  @Input() width: number;
 
-  isLoading: Boolean;
+  isLoading: boolean;
 
   constructor() {
     console.log('-->this.isLoading = true');
