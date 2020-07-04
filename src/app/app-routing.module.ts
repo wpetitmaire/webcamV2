@@ -4,8 +4,8 @@ import { WebcamComponent } from './webcam/webcam.component';
 
 
 const routes: Routes = [
-  { path: '', component: WebcamComponent },
-  { path: '**', redirectTo: '' },
+  // { path: '', component: WebcamComponent },
+  // { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
