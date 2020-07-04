@@ -6,19 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WebcamComponent } from './webcam/webcam.component';
 import { LoadImageWithLoaderComponent } from './load-image-with-loader/load-image-with-loader.component';
-import { PanneauLateralNavigationComponent } from './panneau-lateral-navigation/panneau-lateral-navigation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SidenavComponentComponent } from './sidenav-component/sidenav-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WebcamComponent,
     LoadImageWithLoaderComponent,
-    PanneauLateralNavigationComponent,
+    SidenavComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/webcam'}],
   // providers: [{provide: APP_BASE_HREF, useValue: '/webcam/webcam'}],
