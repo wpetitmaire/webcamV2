@@ -1,24 +1,21 @@
-<!-- <p>load-image-with-loader works!</p> -->
-
-  <!-- <img class="responsive-img"
-  [ngStyle]="{
-    display: isLoading ? 'none' : 'block',
-    height: height ? height + 'px' : 'auto',
-    width: width ? width + 'px' : 'auto'
-  }"
-  [src]="image"
-  (load)="hideLoading()"
-  (error)="hideLoading()"
->
-<div *ngIf="isLoading" class="preloader-wrapper big active">
-  <div class="spinner-layer spinner-blue-only">
-    <div class="circle-clipper left">
-      <div class="circle"></div>
-    </div><div class="gap-patch">
-      <div class="circle"></div>
-    </div><div class="circle-clipper right">
-      <div class="circle"></div>
-    </div>
+<!-- Conteneur de l'image -->
+<div class='fullpicture-container'>
+  <div class='snapshot'>
+    <img id='imgLive'
+      [name]="name"
+      [src]="image"
+      [alt]="altText"
+      [title]="title"
+      [ngStyle]="{ display: isLoading ? 'none' : 'block' }"
+      (load)="hideLoading()"
+      (error)="hideLoading()"
+    />
   </div>
-</div> -->
+</div>
+
+<!-- Spinner de chargement -->
+<div *ngIf="isLoading" class="wrapper">
+  <div class="inner"><mat-spinner></mat-spinner></div>
+</div>
+
 

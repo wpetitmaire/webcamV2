@@ -9,8 +9,9 @@ export class LoadImageWithLoaderComponent implements OnInit {
 
 
   @Input() image: string;
-  @Input() height: number;
-  @Input() width: number;
+  @Input() title: string;
+  @Input() altText: string;
+  @Input() name: string;
 
   isLoading: boolean;
 

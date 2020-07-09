@@ -13,14 +13,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { SidenavComponentComponent } from './sidenav-component/sidenav-component.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
     WebcamComponent,
     LoadImageWithLoaderComponent,
-    SidenavComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,10 +29,10 @@ import { SidenavComponentComponent } from './sidenav-component/sidenav-component
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatProgressSpinnerModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/webcam'}],
-  // providers: [{provide: APP_BASE_HREF, useValue: '/webcam/webcam'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
