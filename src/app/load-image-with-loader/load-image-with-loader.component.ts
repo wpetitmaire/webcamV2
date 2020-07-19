@@ -16,7 +16,6 @@ export class LoadImageWithLoaderComponent implements OnInit {
   isLoading: boolean;
 
   constructor() {
-    console.log('-->this.isLoading = true');
     this.isLoading = true;
   }
 
@@ -24,7 +23,6 @@ export class LoadImageWithLoaderComponent implements OnInit {
   }
 
   hideLoading(): void {
-    console.log('-->this.isLoading = false');
     this.isLoading = false;
   }
 }

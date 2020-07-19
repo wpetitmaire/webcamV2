@@ -27,6 +27,9 @@ export class AppComponent implements OnDestroy{
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
+  ouvrirLesArchives(): void {
+    console.log('--ouvrirLesArchives--');
 
+  }
 
 }
