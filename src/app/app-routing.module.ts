@@ -5,8 +5,8 @@ import { ArchiveComponent } from './archive/archive.component';
 
 
 const routes: Routes = [
-  { path: '', component: WebcamComponent },
-  { path: 'archives', component: ArchiveComponent },
+  // { path: '', component: WebcamComponent },
+  { path: '', component: ArchiveComponent },
   { path: '**', redirectTo: '' },
 ];
 
