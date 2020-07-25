@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod": "ng build --prod --baseHref=./"
+    "build-prod": "ng build --prod --baseHref=./",
+    "eslint": "eslint 'src/**/*.ts'"
   },
   "private": true,
   "dependencies": {
