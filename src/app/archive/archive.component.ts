@@ -6,6 +6,8 @@ import {
 } from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 // import {MatFormFieldModule,MatFormFieldControl} from '@angular/material/form-field';
 
@@ -26,10 +28,11 @@ import { MediaMatcher } from '@angular/cdk/layout';
 export class ArchiveComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
+  dateRecherche: Date;
 
   private mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this.mobileQueryListener);
@@ -37,6 +40,18 @@ export class ArchiveComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this.mobileQueryListener);
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '285px',
+      data: { test: this.dateRecherche }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('FENÊTRE FERMÉE => ' + result);
+      this.dateRecherche = result;
+    });
   }
 
 }

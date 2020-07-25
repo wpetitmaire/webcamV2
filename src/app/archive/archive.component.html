@@ -1,14 +1,3 @@
-<h1>Archives</h1>
-<p>Consulter toutes les photos prises par la webcam</p>
+<h1>{{dateRecherche | date:'fullDate'}}</h1>
 
-<div>
-  <mat-form-field appearance="fill">
-    <mat-label>Choisir une date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker [touchUi]="mobileQuery.matches" #picker></mat-datepicker>
-  </mat-form-field>
-</div>
-
-<!-- Bouton de saisie de la date -->
-<button mat-fab color="primary" style="position: fixed; bottom: 15px; right: 15px;"><mat-icon>search</mat-icon></button>
+<button mat-fab color="primary" style="position: fixed; bottom: 15px; right: 15px;" (click)="openDialog()"><mat-icon>search</mat-icon></button>

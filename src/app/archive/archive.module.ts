@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { FormsModule }   from '@angular/forms';
 
 import { ArchiveComponent } from './archive.component';
 import { DialogComponent } from './dialog/dialog.component'
+
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -18,8 +24,11 @@ import { DialogComponent } from './dialog/dialog.component'
   imports: [
     CommonModule,
 
+    FormsModule,
+
     // Imports Material
     MatButtonModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,

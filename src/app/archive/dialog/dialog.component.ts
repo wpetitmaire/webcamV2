@@ -11,9 +11,13 @@ export class DialogComponent implements OnInit {
 
   dateRecherche: string;
 
-  constructor(dialogueRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) data: DialogData) { }
+  constructor(public dialogueRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit(): void {
+  }
+
+  onNoClick(): void {
+    this.dialogueRef.close();
   }
 
 }
