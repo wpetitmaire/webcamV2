@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DialogData } from './dialog.data';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogComponent implements OnInit {
 
-  constructor() { }
+  dateRecherche: string;
+
+  constructor(dialogueRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) data: DialogData) { }
 
   ngOnInit(): void {
   }
