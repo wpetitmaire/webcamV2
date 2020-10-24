@@ -51,6 +51,7 @@ export class ArchiveComponent implements OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       console.log('FENÊTRE FERMÉE => ' + result);
       this.dateRecherche = result;
+      
     });
   }
 
