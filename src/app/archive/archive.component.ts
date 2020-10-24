@@ -28,7 +28,7 @@ import { DialogComponent } from './dialog/dialog.component';
 export class ArchiveComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
-  dateRecherche: Date;
+  dateRecherche!: Date;
 
   private mobileQueryListener: () => void;
 

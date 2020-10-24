@@ -8,10 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LoadImageWithLoaderComponent implements OnInit {
 
 
-  @Input() image: string;
-  @Input() title: string;
-  @Input() altText: string;
-  @Input() name: string;
+  @Input()
+  image!: string;
+  @Input()
+  title!: string;
+  @Input()
+  altText!: string;
+  @Input()
+  name!: string;
 
   isLoading: boolean;
 

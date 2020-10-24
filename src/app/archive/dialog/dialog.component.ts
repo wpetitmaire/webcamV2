@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit {
 
-  dateRecherche: string;
+  dateRecherche!: string;
 
   constructor(public dialogueRef: MatDialogRef<DialogComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
