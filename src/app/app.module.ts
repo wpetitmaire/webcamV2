@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import {APP_BASE_HREF} from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { ArchiveComponent } from './archive/archive.component';
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {ClipboardModule} from '@angular/cdk/clipboard';
@@ -51,7 +51,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { DialogComponent } from './archive/dialog/dialog.component';
 
 import { WebcamComponent } from './webcam/webcam.component';
 import { LoadImageWithLoaderComponent } from './load-image-with-loader/load-image-with-loader.component';
@@ -65,6 +64,7 @@ import { ArchiveModule } from './archive/archive.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
 
     AppRoutingModule,
     BrowserAnimationsModule,
