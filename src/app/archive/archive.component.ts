@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 
 import { ArchiveService } from './archive.service';
+import { Archive } from './archive';
 
 
 
@@ -33,6 +34,7 @@ export class ArchiveComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
   dateRecherche!: Date;
+  listeDesElements!: Archive.fileDescription[];
 
   private mobileQueryListener: () => void;
 
@@ -55,7 +57,12 @@ export class ArchiveComponent implements OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       console.log('FENÊTRE FERMÉE => ' + result);
       this.dateRecherche = result;
-      this.archivesService.getArchives(result);
+      this.archivesService.getArchives(result).subscribe(result => {
+        console.log('--> RETOUR API');
+        console.log(result);
+
+        this.listeDesElements = result.data;
+      });
     });
   }
 
