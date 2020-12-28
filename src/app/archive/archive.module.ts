@@ -7,6 +7,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 import { FormsModule }   from '@angular/forms';
 
@@ -14,6 +16,7 @@ import { ArchiveComponent } from './archive.component';
 import { DialogComponent } from './dialog/dialog.component'
 
 import localeFr from '@angular/common/locales/fr';
+import { MatNativeDateModule } from '@angular/material/core';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -31,8 +34,11 @@ registerLocaleData(localeFr);
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatNativeDateModule,
     MatDatepickerModule,
     MatIconModule,
+    MatGridListModule,
+    MatCardModule
   ]
 })
 export class ArchiveModule { }
