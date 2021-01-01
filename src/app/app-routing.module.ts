@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WebcamComponent } from './webcam/webcam.component';
-import { ArchiveComponent } from './archive/archive.component';
+import { ArchiveComponent } from './archive-manager/archive-manager/archive-manager.component';
 
 
 const routes: Routes = [

@@ -12,19 +12,25 @@ import {MatCardModule} from '@angular/material/card';
 
 import { FormsModule }   from '@angular/forms';
 
-import { ArchiveComponent } from './archive.component';
+import { ArchiveComponent } from './archive-manager/archive-manager.component';
 import { DialogComponent } from './dialog/dialog.component'
 
 import localeFr from '@angular/common/locales/fr';
 import { MatNativeDateModule } from '@angular/material/core';
-import { CardHighlightDirective } from './card-highlight.directive';
+import { CardHighlightDirective } from './archive-manager/card-highlight.directive';
+import { ArchiveYearComponent } from './archive-year/archive-year.component';
+import { ArchiveMonthComponent } from './archive-month/archive-month.component';
+import { ArchiveDayComponent } from './archive-day/archive-day.component';
 registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
     ArchiveComponent,
     DialogComponent,
-    CardHighlightDirective
+    CardHighlightDirective,
+    ArchiveYearComponent,
+    ArchiveMonthComponent,
+    ArchiveDayComponent
   ],
   imports: [
     CommonModule,
