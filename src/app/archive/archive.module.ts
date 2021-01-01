@@ -17,12 +17,14 @@ import { DialogComponent } from './dialog/dialog.component'
 
 import localeFr from '@angular/common/locales/fr';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CardHighlightDirective } from './card-highlight.directive';
 registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
     ArchiveComponent,
-    DialogComponent
+    DialogComponent,
+    CardHighlightDirective
   ],
   imports: [
     CommonModule,

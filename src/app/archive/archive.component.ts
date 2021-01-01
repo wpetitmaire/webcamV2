@@ -39,6 +39,11 @@ export class ArchiveComponent implements OnDestroy {
   private mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog, private archivesService: ArchiveService) {
+
+    // Recherche de toutes les archives
+    this.archivesService.getAllArchives().subscribe(result => this.listeDesElements = result.data);
+
+
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this.mobileQueryListener);
@@ -55,15 +60,8 @@ export class ArchiveComponent implements OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('FENÊTRE FERMÉE => ' + result);
       this.dateRecherche = result;
-      this.archivesService.getArchives(result).subscribe(result => {
-        console.log('--> RETOUR API');
-        console.log(result);
-
-        this.listeDesElements = result.data;
-      });
+      this.archivesService.getArchives(result).subscribe(result => {this.listeDesElements = result.data;});
     });
   }
-
 }
