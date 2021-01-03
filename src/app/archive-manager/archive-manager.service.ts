@@ -24,4 +24,8 @@ export class ArchiveManagerService {
   getAllArchives(): Observable<any> {
     return this.http.get(`${API_URL}/api/archives`, { responseType: 'json' });
   }
+
+  getYearArchives(year: number): Observable<any> {
+    return this.http.get(`${API_URL}/api/archives?year=${year}`, { responseType: 'json' });
+  }
 }

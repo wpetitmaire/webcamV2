@@ -21,4 +21,9 @@ export class ArchiveManagerComponent implements OnInit {
     this.archivesService.getAllArchives().subscribe(result => this.listeDesElements = result.data);
   }
 
+  searchYears(element: Archive.fileDescription): void {
+    console.log(`-- searchYears ${element.name} --`)
+    console.log(element)
+  }
+
 }

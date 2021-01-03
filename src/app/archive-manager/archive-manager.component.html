@@ -5,7 +5,7 @@
   <mat-grid-tile  *ngFor="let element of listeDesElements">
 
     <!-- Carte -->
-    <mat-card appCardHighlight>
+    <mat-card appCardHighlight [routerLink]="[element.name]">
       <!-- Entête de la carte -->
       <mat-card-header>
         <mat-card-title>{{element.name}}</mat-card-title>

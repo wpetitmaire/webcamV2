@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Archive } from '../archive-manager';
+import { ArchiveManagerService } from '../archive-manager.service';
 
 @Component({
   selector: 'app-archive-year',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArchiveYearComponent implements OnInit {
 
-  constructor() { }
+  private year: number;
+  listeDesElements!: Archive.fileDescription[];
+
+  constructor(private route: ActivatedRoute, private router: Router, private archivesService: ArchiveManagerService) {
+
+    const argument = (route.snapshot.paramMap.get('year') == '' || route.snapshot.paramMap.get('year') == null) ? -1 : parseInt(<string>route.snapshot.paramMap.get('year'));
+
+    // Si l'argument envoyé n'est pas une année, on redirige l'application vers le parent (les archives globales)
+    if(argument == -1 || isNaN(argument) || `${argument}`.length !== 4) {
+      router.navigate(['../'], { relativeTo: route });
+    }
+
+    this.year = argument;
+    this.loadArchives();
+  }
 
   ngOnInit(): void {
+  }
+
+  loadArchives(): void {
+    this.archivesService.getYearArchives(this.year).subscribe(result => {
+      this.listeDesElements = result.data
+      console.log(this.listeDesElements)
+    });
   }
 
 }
