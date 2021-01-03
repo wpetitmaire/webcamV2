@@ -15,13 +15,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { CardHighlightDirective } from './card-highlight.directive';
+import { ArchiveMonthComponent } from './archive-month/archive-month.component';
 
 
 
 
 
 @NgModule({
-  declarations: [ArchiveManagerComponent, ArchiveYearComponent, CardHighlightDirective],
+  declarations: [ArchiveManagerComponent, ArchiveYearComponent, CardHighlightDirective, ArchiveMonthComponent],
   imports: [
     CommonModule,
 
