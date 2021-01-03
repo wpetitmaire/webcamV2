@@ -19,7 +19,6 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 import { WebcamComponent } from './webcam/webcam.component';
 import { LoadImageWithLoaderComponent } from './load-image-with-loader/load-image-with-loader.component';
-import { ArchiveModule } from './archive-manager/archive.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { ArchiveModule } from './archive-manager/archive.module';
     MatSidenavModule,
     MatProgressSpinnerModule,
 
-    ArchiveModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' },
