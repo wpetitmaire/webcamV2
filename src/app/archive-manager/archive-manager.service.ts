@@ -41,4 +41,14 @@ export class ArchiveManagerService {
   getMonthArchives(year: string, month: string): Observable<any> {
     return this.http.get(`${API_URL}/api/archives?year=${year}&month=${month}`, { responseType: 'json' });
   }
+
+  /**
+   * Récupérer les archives pour une journée
+   * @param year Année concernée
+   * @param month Mois concerné
+   * @param day Jour concerné
+   */
+  getDayArchives(year: string, month: string, day: string): Observable<any> {
+    return this.http.get(`${API_URL}/api/archives?year=${year}&month=${month}&day=${day}`, { responseType: 'json' });
+  }
 }

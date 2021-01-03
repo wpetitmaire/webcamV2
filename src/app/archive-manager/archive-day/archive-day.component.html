@@ -1,0 +1,24 @@
+<!-- Grille des cartes d'archives -->
+<mat-grid-list class="archive-grid-list" *ngIf="listeDesElements" cols="3" gutterSize="10px">
+
+    <!-- Éléments de la grille -->
+    <mat-grid-tile appCardHighlight *ngFor="let element of listeDesElements">
+  
+      <!-- Carte -->
+      <mat-card>
+        <!-- Entête de la carte -->
+        <mat-card-header>
+          <mat-card-title>{{element.name}}</mat-card-title>
+        </mat-card-header>
+  
+        <!-- Contenu : icône de dossier ou photo de l'archive -->
+        <p class="tile-icon-folder"><span *ngIf="!element.isFile" class="material-icons md-48">folder</span></p>
+        <img *ngIf="element.isFile" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+  
+        <!-- Boutons d'actions de la carte -->
+        <mat-card-actions *ngIf="element.isFile">
+          <button mat-button><span class="material-icons">get_app</span>Télécharger</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
