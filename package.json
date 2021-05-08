@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve --open=true --sourceMap=true",
     "build": "ng build",
-    "build-prod": "ng build --prod --baseHref=./"
+    "build-prod": "ng build --prod --baseHref=./",
+    "start-nas": "ng serve --port 4242"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "~10.0.5",
     "@angular/platform-browser-dynamic": "~10.0.5",
     "@angular/router": "~10.0.5",
+    "config": "^3.3.6",
     "fs-extra": "^9.0.1",
     "http-proxy": "^1.18.1",
     "lite-server": "^2.5.4",

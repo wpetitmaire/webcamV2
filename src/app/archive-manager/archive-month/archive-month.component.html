@@ -12,8 +12,7 @@
         </mat-card-header>
   
         <!-- Contenu : icône de dossier ou photo de l'archive -->
-        <p class="tile-icon-folder"><span *ngIf="!element.isFile" class="material-icons md-48">folder</span></p>
-        <img *ngIf="element.isFile" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        <p class="tile-icon-folder"><span class="material-icons md-48">folder</span></p>
   
         <!-- Boutons d'actions de la carte -->
         <mat-card-actions *ngIf="element.isFile">

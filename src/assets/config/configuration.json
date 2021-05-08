@@ -1,0 +1,12 @@
+{
+    "webcam":{
+        "host": "88.162.135.14",
+        "live": {
+            "port": "18082"
+        },
+        "archives": {
+            "port": "18080",
+            "basePath": "/webcam/pictures/intervalSnapshots"
+        }
+    }
+}
