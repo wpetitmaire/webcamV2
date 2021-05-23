@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Archive } from '../archive-manager';
 import { ArchiveManagerService } from '../archive-manager.service';
@@ -14,6 +14,8 @@ export class ArchiveMonthComponent implements OnInit {
   private month: number;
   private brutMonth: string | null;
   listeDesElements!: Archive.fileDescription[];
+  @Input() showSpinner = true;
+  messageSpinner: string;
 
   constructor(private route: ActivatedRoute, private router: Router, private archivesService: ArchiveManagerService) {
 
@@ -38,6 +40,7 @@ export class ArchiveMonthComponent implements OnInit {
     this.month = argumentMois;
     this.brutMonth = route.snapshot.paramMap.get('month');
 
+    this.messageSpinner = `Chargement des archives de ${argumentMois}/${argumentAnnee}`;
     this.loadArchives();
   }
 
@@ -46,8 +49,8 @@ export class ArchiveMonthComponent implements OnInit {
 
   loadArchives(): void {
     this.archivesService.getMonthArchives(`${this.year}`, <string>this.brutMonth).subscribe(result => {
-      this.listeDesElements = result.data
-      console.log(this.listeDesElements)
+      this.listeDesElements = result.data;
+      this.showSpinner = false;
     });
   }
 

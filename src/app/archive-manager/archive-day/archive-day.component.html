@@ -1,5 +1,9 @@
+<app-spinner *ngIf="showSpinner"
+  [message] = "messageSpinner"
+></app-spinner>
+
 <!-- Grille des cartes d'archives -->
-<mat-grid-list class="archive-grid-list" *ngIf="listeDesElements" cols="3" gutterSize="10px">
+<mat-grid-list class="archive-grid-list" *ngIf="listeDesElements && !showSpinner" cols="3" gutterSize="10px">
 
     <!-- Éléments de la grille -->
     <mat-grid-tile appCardHighlight *ngFor="let element of listeDesElements">

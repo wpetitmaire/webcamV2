@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Archive } from '../archive-manager';
 import { ArchiveManagerService } from '../archive-manager.service';
@@ -12,6 +12,8 @@ export class ArchiveYearComponent implements OnInit {
 
   private year: number;
   listeDesElements!: Archive.fileDescription[];
+  @Input() showSpinner = true;
+  messageSpinner: String;
 
   constructor(private route: ActivatedRoute, private router: Router, private archivesService: ArchiveManagerService) {
 
@@ -23,6 +25,7 @@ export class ArchiveYearComponent implements OnInit {
     }
 
     this.year = argument;
+    this.messageSpinner = `Chargement des archives de l'année ${argument}`;
     this.loadArchives();
   }
 
@@ -32,8 +35,7 @@ export class ArchiveYearComponent implements OnInit {
   loadArchives(): void {
     this.archivesService.getYearArchives(this.year).subscribe(result => {
       this.listeDesElements = result.data
-      console.log(this.listeDesElements)
+      this.showSpinner = false;
     });
   }
-
 }

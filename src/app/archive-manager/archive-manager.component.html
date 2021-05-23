@@ -1,5 +1,9 @@
-<!-- Grille des cartes d'archives -->
-<mat-grid-list class="archive-grid-list" *ngIf="listeDesElements" cols="3" gutterSize="10px">
+<app-spinner *ngIf="showSpinner"
+  [message] = "messageSpinner"
+></app-spinner>
+
+<!-- Grille des cartes d'archives-->
+<mat-grid-list class="archive-grid-list" *ngIf="listeDesElements && !showSpinner" cols="3" gutterSize="10px">
 
   <!-- Éléments de la grille -->
   <mat-grid-tile  *ngFor="let element of listeDesElements">
@@ -22,7 +26,12 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<!-- <button mat-fab color="primary" style="position: fixed; bottom: 15px; right: 15px;" (click)="openDialog()"><mat-icon>search</mat-icon></button> -->
 
-<!-- <p>archive-manager works!</p> -->
+
+
+
+
+
+
+
 

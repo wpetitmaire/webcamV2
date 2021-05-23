@@ -17,13 +17,23 @@ import {MatCardModule} from '@angular/material/card';
 import { CardHighlightDirective } from './card-highlight.directive';
 import { ArchiveMonthComponent } from './archive-month/archive-month.component';
 import { ArchiveDayComponent } from './archive-day/archive-day.component';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { AppModule } from '../app.module';
+import { SpinnerModule } from '../spinner/spinner.module';
 
 
 
 
 
 @NgModule({
-  declarations: [ArchiveManagerComponent, ArchiveYearComponent, CardHighlightDirective, ArchiveMonthComponent, ArchiveDayComponent],
+  declarations: [
+    // SpinnerComponent,
+    ArchiveManagerComponent, 
+    ArchiveYearComponent, 
+    CardHighlightDirective, 
+    ArchiveMonthComponent, 
+    ArchiveDayComponent
+  ],
   imports: [
     CommonModule,
 
@@ -38,7 +48,9 @@ import { ArchiveDayComponent } from './archive-day/archive-day.component';
     MatGridListModule,
     MatCardModule,
 
-    ArchiveManagerRoutingModule
+
+    ArchiveManagerRoutingModule,
+    SpinnerModule
   ]
 })
 export class ArchiveManagerModule { }
