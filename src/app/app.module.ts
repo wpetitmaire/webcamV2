@@ -21,6 +21,7 @@ import { WebcamComponent } from './webcam/webcam.component';
 import { LoadImageWithLoaderComponent } from './load-image-with-loader/load-image-with-loader.component';
 import { ConfigurationHelperService } from './configuration-helper.service';
 import { environment } from 'src/environments/environment';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 // Déclaration de la fonction d'initialisation de la configuration
 export function initConfig(configService: ConfigurationHelperService) {
@@ -46,6 +47,8 @@ export function initConfig(configService: ConfigurationHelperService) {
     MatSidenavModule,
     MatProgressSpinnerModule,
 
+  ],
+  exports: [
   ],
   providers: [
     // { provide: APP_INITIALIZER, useFactory: initConfig, deps: [ConfigurationHelperService], multi: true },
