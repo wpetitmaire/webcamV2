@@ -1,0 +1,10 @@
+{
+    "apiUrl": "",
+    "live": {
+        "port": ""
+    },
+    "archives": {
+        "port": "",
+        "url": ""
+    }
+}

@@ -8,15 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LoadImageWithLoaderComponent implements OnInit {
 
 
-  @Input() image: string;
-  @Input() title: string;
-  @Input() altText: string;
-  @Input() name: string;
+  @Input()
+  image!: string;
+  @Input()
+  title!: string;
+  @Input()
+  altText!: string;
+  @Input()
+  name!: string;
 
   isLoading: boolean;
 
   constructor() {
-    console.log('-->this.isLoading = true');
     this.isLoading = true;
   }
 
@@ -24,7 +27,6 @@ export class LoadImageWithLoaderComponent implements OnInit {
   }
 
   hideLoading(): void {
-    console.log('-->this.isLoading = false');
     this.isLoading = false;
   }
 }

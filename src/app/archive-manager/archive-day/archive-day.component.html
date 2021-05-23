@@ -1,0 +1,27 @@
+<app-spinner *ngIf="showSpinner"
+  [message] = "messageSpinner"
+></app-spinner>
+
+<!-- Grille des cartes d'archives -->
+<mat-grid-list class="archive-grid-list" *ngIf="listeDesElements && !showSpinner" cols="3" gutterSize="10px">
+
+    <!-- Éléments de la grille -->
+    <mat-grid-tile appCardHighlight *ngFor="let element of listeDesElements">
+  
+      <!-- Carte -->
+      <mat-card>
+        <!-- Entête de la carte -->
+        <mat-card-header>
+          <mat-card-title>{{element.name}}</mat-card-title>
+        </mat-card-header>
+  
+        <!-- Contenu : icône de dossier ou photo de l'archive -->
+        <img mat-card-image [src]="element.absolutePath" >
+  
+        <!-- Boutons d'actions de la carte -->
+        <mat-card-actions *ngIf="element.isFile">
+          <button mat-button><span class="material-icons">get_app</span>Télécharger</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>

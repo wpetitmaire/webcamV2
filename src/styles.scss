@@ -2,3 +2,58 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/********************************************************************************************************************************/
+/*****                                                   PROPRIETES FLEXBOX                                                 *****/
+/********************************************************************************************************************************/
+
+/* Flex avec affichage en colonnes */
+.flex-container-columns {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+/* Columns inverses */
+.flex-container-columns-reverse {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column-reverse;
+}
+
+/* Flex avec affichage en lignes */
+.flex-container-rows {
+  display: -webkit-box;
+  display: flex;
+}
+
+/* Flex avec affichage en lignes direction invers */
+.flex-container-rows-reverse {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  flex-direction: row-reverse;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex-item-1 {
+  -webkit-box-flex: 1;
+          flex: 1 0 0;
+}
+
+.flex-item-2 {
+  -webkit-box-flex: 2;
+          flex: 2 0 0;
+}
+
+.flex-item-3 {
+  -webkit-box-flex: 3;
+          flex: 3 0 0;
+}
